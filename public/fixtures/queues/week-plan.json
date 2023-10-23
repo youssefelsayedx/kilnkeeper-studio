@@ -1,0 +1,7 @@
+{
+  "weekOf": "2026-08-17",
+  "kilns": [
+    { "date": "2026-08-19", "label": "Glaze firing", "capacity": 24 },
+    { "date": "2026-08-22", "label": "Bisque firing", "capacity": 18 }
+  ]
+}
