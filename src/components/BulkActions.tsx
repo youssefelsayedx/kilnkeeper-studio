@@ -1,0 +1,2 @@
+import type { OrderStatus } from '../types'
+export function BulkActions({ count, onMark }: { count: number; onMark: (status: OrderStatus) => void }) { return <div className={`bulk-actions ${count ? 'is-visible' : ''}`} aria-label="Bulk actions"><span>{count} selected</span><button onClick={() => onMark('in-progress')} disabled={!count}>Start work</button><button onClick={() => onMark('ready')} disabled={!count}>Mark ready</button></div> }
