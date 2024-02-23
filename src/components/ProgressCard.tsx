@@ -1,0 +1,3 @@
+import type { Order } from '../types'
+import { orderProgress } from '../lib/filters'
+export function ProgressCard({ orders }: { orders: Order[] }) { const progress = orderProgress(orders); return <section className="progress-card" aria-labelledby="progress-heading"><div className="progress-copy"><p className="eyebrow">This week</p><h2 id="progress-heading">Firing queue</h2><p><strong>{progress.done} of {progress.total}</strong> orders ready for collection</p></div><div className="progress-meter" role="progressbar" aria-label="Orders ready for collection" aria-valuenow={progress.percent} aria-valuemin={0} aria-valuemax={100}><span style={{ width: `${progress.percent}%` }} /></div><span className="progress-percent">{progress.percent}%</span></section> }
