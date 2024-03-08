@@ -1,0 +1,2 @@
+import type { Studio } from '../types'
+export function StudioSwitcher({ studios, activeId, onChange }: { studios: Studio[]; activeId: string; onChange: (id: string) => void }) { return <label className="studio-select">Studio <select value={activeId} onChange={(event) => onChange(event.target.value)}>{studios.map((studio) => <option key={studio.id} value={studio.id}>{studio.name}</option>)}</select></label> }
