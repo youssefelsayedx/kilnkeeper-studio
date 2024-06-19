@@ -1,0 +1,3 @@
+import { describe, expect, it } from 'vitest'
+import { loadStudios, sampleStudios, saveStudios } from './storage'
+describe('storage', () => { it('seeds a studio when storage is empty', () => expect(loadStudios()[0].id).toBe('studio-mokha')); it('round trips studio data', () => { const studios = sampleStudios(); saveStudios(studios); expect(loadStudios()).toEqual(studios) }); it('falls back when JSON is corrupt', () => { localStorage.setItem('kilnkeeper-studios', '{not-json'); expect(loadStudios()).toEqual(sampleStudios()) }); it('falls back when JSON is not an array', () => { localStorage.setItem('kilnkeeper-studios', JSON.stringify({ nope: true })); expect(loadStudios()).toEqual(sampleStudios()) }) })
